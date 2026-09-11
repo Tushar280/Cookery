@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: a055ea8c6253ab4418593c837c1b964e
+AssetOrigin:
+  serializedVersion: 1
+  productId: 371114
+  packageName: Stylized Low Poly kitchen Pack
+  packageVersion: 1.0
+  assetPath: Assets/KitchenAssetPack/Textures/TextureAtlas.png
+  uploadId: 892514
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -128,10 +135,3 @@ TextureImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 371114
-  packageName: Stylized Low Poly kitchen Pack
-  packageVersion: 1.0
-  assetPath: Assets/KitchenAssetPack/Textures/TextureAtlas.png
-  uploadId: 892514
