@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        playerInput = new PlayerInput();
+        playerInput = GetComponent<PlayerInput>();
     }
 
     void Update()
