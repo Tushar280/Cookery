@@ -4,10 +4,10 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
-
+    public float rotateSpeed = 10f;
 
     private Rigidbody rb;
-    private Vector3 moveInput;
+    private Vector2 moveInput;
     private PlayerInput playerInput;
 
     void Start()
@@ -18,13 +18,18 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        Vector3 moveDir = new Vector3(moveInput.x, 0f, moveInput.y);
+
+        if (moveDir != Vector3.zero)
+        {
+            transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
+        }
     }
 
     private void FixedUpdate()
     {
         MovePlayer();
     }
-
 
     void OnMovement(InputValue value)
     {
@@ -33,8 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
     void MovePlayer()
     {
-        Vector3 direction = transform.right * moveInput.x + transform.forward * moveInput.y;
-        direction.Normalize();
-        rb.linearVelocity = new Vector3(direction.x * moveSpeed, rb.linearVelocity.y, direction.z * moveSpeed);
+        Vector3 moveDir = new Vector3(moveInput.x, 0f, moveInput.y);
+        rb.linearVelocity = new Vector3(moveDir.x * moveSpeed, rb.linearVelocity.y, moveDir.z * moveSpeed);
     }
 }
